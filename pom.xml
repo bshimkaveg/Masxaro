@@ -141,7 +141,24 @@
          <scope>test</scope>               
       </dependency>
 
+      <dependency>
+        <groupId>javax.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+      </dependency>
    </dependencies>
+
+
+<repositories>
+    <repository>
+        <id>maven2-repository.dev.java.net</id>
+        <name>Java.net Repository for Maven</name>
+        <url>http://download.java.net/maven/2</url>
+    </repository>
+</repositories>
+
+
 
    <build>
       <!-- Maven will append the version to the finalName (which is the name 
