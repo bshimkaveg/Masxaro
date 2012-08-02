@@ -81,10 +81,10 @@ public class UserBean {
 	FacesMessage doneMessage = null;
 	String outcome = null;
 	if (added) {
-	    doneMessage = new FacesMessage("Successfully added new user");
+	    doneMessage = new FacesMessage("Welcome to Masxaro! You're connected!");
 	    outcome = "done";
 	} else {
-	    doneMessage = new FacesMessage("Failed to add new user");
+	    doneMessage = new FacesMessage("Let's try to register and connect again.");
 	    outcome = "register";
 	}
         FacesContext.getCurrentInstance().addMessage(null, doneMessage);
