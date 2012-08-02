@@ -5,12 +5,13 @@
    xsi:schemaLocation="
         http://java.sun.com/xml/ns/javaee
         http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
-	<application>
+        
+	<!--  <application>
 		<message-bundle>resources.application</message-bundle>
 		<locale-config>
 			<default-locale>en</default-locale>
 		</locale-config>
-	</application>
+	</application> --> 
 
    <!-- This descriptor activates the JSF 2.0 Servlet -->
 

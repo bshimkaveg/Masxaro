@@ -11,28 +11,28 @@ import javax.faces.validator.ValidatorException;
 @ManagedBean
 @SessionScoped
 public class UserBean {
-
+    
     protected String firstName;
-    protected String lastName;
+    protected String userName;
     protected Date dob;
-    protected String sex;
+    protected String gender;
     protected String email;
     protected String serviceLevel = "medium";
 
     public String getFirstName() {
-         return firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-         return lastName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Date getDob() {
@@ -43,16 +43,16 @@ public class UserBean {
         this.dob = dob;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {
-         return email;
+        return email;
     }
 
     public void setEmail(String email) {
@@ -63,33 +63,32 @@ public class UserBean {
         return serviceLevel;
     }
 
-    public void setServiceLevel(String ServiceLevel) {
-         this.serviceLevel = serviceLevel;
+    public void setServiceLevel(String serviceLevel) {
+        this.serviceLevel = serviceLevel;
     }
-
-    public void validateEmail(FacesContext context,
-                              UIComponent toValidate,
+    
+    public void validateEmail(FacesContext context, UIComponent toValidate,
             Object value) throws ValidatorException {
         String emailStr = (String) value;
         if (-1 == emailStr.indexOf("@")) {
-            FacesMessage message = new FacesMessage("Invalid email
-            address");
+            FacesMessage message = new FacesMessage("Invalid email address");
             throw new ValidatorException(message);
         }
-  }
+    }
 
-  public String addConfirmedUser() {
-      boolean added = true; // actual application may fail to add user
-      FacesMessage doneMessage = null;
-      String outcome = null;
-      if (added) {
-        doneMessage = new FacesMessage("Successfully added new user");
-        outcome = "done";
-      } else {
-        doneMessage = new FacesMessage("Failed to add new user");
-        outcome = "register";
-      }
-      FacesContext.getCurrentInstance().addMessage(null, doneMessage);
-      return outcome;
+    public String addConfirmedUser() {
+	boolean added = true; // actual application may fail to add user
+	FacesMessage doneMessage = null;
+	String outcome = null;
+	if (added) {
+	    doneMessage = new FacesMessage("Successfully added new user");
+	    outcome = "done";
+	} else {
+	    doneMessage = new FacesMessage("Failed to add new user");
+	    outcome = "register";
+	}
+        FacesContext.getCurrentInstance().addMessage(null, doneMessage);
+        return outcome;
     }
 }
+
